@@ -1,8 +1,8 @@
 module.exports = (app) => {
-  const book = require("../controllers/bookController.js");
+  const post = require("../controllers/postController.js");
   var router = require("express").Router();
 
-  router.get("/api/books", book.bookList);
+  router.get("/api/posts/best", post.postBestList);
 
   app.use("/", router);
 };

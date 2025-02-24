@@ -4,6 +4,7 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
+  timezone: "Asia/Seoul",
 
   pool: {
     max: dbConfig.pool.max,
@@ -19,6 +20,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.books = require("./books.js")(sequelize, Sequelize);
+db.posts = require("./post.js")(sequelize, Sequelize);
 
 module.exports = db;
